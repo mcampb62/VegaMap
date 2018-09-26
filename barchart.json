@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "description": "A bar chart showing the US population distribution of age groups in 2000.",
+  "data": { "url": "https://raw.githubusercontent.com/mcampb62/VegaMap/master/losses2015_transformed.csv"},
+  "transform": [],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Damage_Descp", "type": "ordinal",
+      "scale": {"rangeStep": 17},
+      "sort": {"op": "sum", "field": "Amount", "order":"ascending"}
+    },
+    "x": {
+      "aggregate": "sum", "field": "Amount", "type": "quantitative",
+      "axis": {"title": "population"}
+    }
+  }
+}
